@@ -25,3 +25,4 @@ tar xzf $basename.tar.gz
 cd protobuf-$PROTOBUF_VERSION
 
 ./configure --prefix=/home/travis && make -j2 && make install
+
