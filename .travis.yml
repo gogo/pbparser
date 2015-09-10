@@ -1,0 +1,16 @@
+env:
+  - PROTOBUF_VERSION=3.0.0-alpha-3
+
+before_install:
+  - ./install-protobuf.sh
+  - PATH=/home/travis/bin:$PATH protoc --version
+  - go get -u github.com/gogo/protobuf/protoc-gen-gogo/descriptor
+  - go get -u github.com/gogo/protobuf/proto
+
+script:
+  - PATH=/home/travis/bin:$PATH make all
+
+language: go
+
+go:
+  - 1.5
