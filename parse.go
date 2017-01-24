@@ -60,7 +60,7 @@ func parseFile(filename string, includeSourceInfo bool, includeImports bool, pat
 	args = append(args, filename)
 	cmd := exec.Command("protoc", args...)
 	cmd.Env = []string{}
-	data, err := cmd.CombinedOutput()
+	data, err := cmd.Output()
 	if err != nil {
 		return nil, &errCmd{data, err}
 	}
